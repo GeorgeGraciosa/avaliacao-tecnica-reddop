@@ -25,7 +25,7 @@ body {
   text-align: center;
 }
 
-.mainContent h1 {
+.mainContent h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 10px;
@@ -51,7 +51,8 @@ body {
   cursor: pointer;
 }
 
-#button {
+#button,
+#ordenar {
   margin: 10px auto;
   width: 200px;
   height: 30px;
@@ -61,7 +62,8 @@ body {
   border: none;
 }
 
-#button:hover {
+#button:hover,
+#ordenar:hover {
   scale: 1.025;
   cursor: pointer;
 }
@@ -75,9 +77,13 @@ body {
   margin: 40px auto;
 }
 
-.containerTarefa {
+#tarefas {
   width: 100%;
   max-width: 600px;
+  margin: 0 auto;
+}
+
+.containerTarefa {
   margin: 20px auto;
   padding: 16px;
 
@@ -91,11 +97,24 @@ body {
   background-color: #fffdf8;
 }
 
+.containerTarefa.pendente {
+  border-left: 6px solid #f4af30;
+}
+
+.containerTarefa.andamento {
+  border-left: 6px solid #9381ff;
+}
+
+.containerTarefa.concluida {
+  border-left: 6px solid #5f8651;
+}
+
 .containerTarefa p {
   word-wrap: break-word;
   overflow-wrap: break-word;
   text-align: center;
   max-width: 500px;
+  margin-top: 10px;
 }
 
 .containerTarefa div {
@@ -106,26 +125,38 @@ body {
   margin-top: 14px;
 }
 
+.containerTarefa span {
+  align-self: flex-end;
+}
+
 .containerTarefa button {
   height: 30px;
   width: 140px;
   border: none;
   border-radius: 4px;
   font-weight: bold;
+  background-color: #eee;
 }
 
 .containerTarefa button:hover {
   cursor: pointer;
 }
 
-.pendente {
+.pendente.ativo,
+button.pendente:hover {
   background-color: #f4af30;
 }
 
-.andamento {
+.andamento.ativo,
+button.andamento:hover {
   background-color: #9381ff;
 }
 
-.concluida {
+.concluida.ativo,
+button.concluida:hover {
   background-color: #5f8651;
+}
+
+.venceu {
+  opacity: 0.6;
 }
